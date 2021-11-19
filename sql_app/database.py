@@ -10,9 +10,9 @@ SQLALCHEMY_DATABASE_URL = URL.create(
     database="test",
 )
 
-engine = create_async_engine(SQLALCHEMY_DATABASE_URL, echo=False)
+async_engine = create_async_engine(SQLALCHEMY_DATABASE_URL, echo=False)
 SessionLocal = sessionmaker(
-    engine, expire_on_commit=False, class_=AsyncSession
+    async_engine, expire_on_commit=False, class_=AsyncSession
 )
 
 Base = declarative_base()
